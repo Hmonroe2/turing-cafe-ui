@@ -17,14 +17,12 @@ class App extends Component {
     .then(response => response.json())
     .then((data) => this.setState({reservations: data}))
     .catch((error) => {console.log(error)})
-
-
-    // fetchReservationData()
-    //   .then((data) => this.setState({ reservations: data }))
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
   }
+
+  addReservation = (newRes) => {
+      this.setState({reservations: [newRes, ...this.state.reservations] })
+    }
+  
 
   render() {
     console.log(this.state.reservations)
@@ -32,7 +30,7 @@ class App extends Component {
       <div className="App">
         <h1 className='app-title'>Turing Cafe Reservations</h1>
         <div className='resy-form'>
-          <Form /> 
+          <Form addReservation={this.addReservation}/> 
         </div>
         <div className='resy-container'>
           <Reservations reservations={this.state.reservations} /> 
