@@ -18,7 +18,7 @@ describe('empty spec', () => {
     cy.visit('http://localhost:3000/')
     cy.get('.app-title').contains('Turing Cafe Reservations')
   })
-  it(`As a user, i should be able to fill out name, date, time and number of people `, () => {
+  it(`As a user, i should be able to fill out name, date, time and number of people and create a reservation`, () => {
     cy.visit('http://localhost:3000/')
     .get('input[type="text"]').type('Hunter')
     .get('[type="date(mm/dd)"]').type('02/22')
