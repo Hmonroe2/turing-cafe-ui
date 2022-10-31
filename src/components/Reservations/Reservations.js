@@ -1,16 +1,21 @@
 import React from 'react'
+// import Card from '../Card/Card'
 import Card from '../Card/Card'
+import './Reservations.css'
 
 const Reservations = ({reservations}) => {
     console.log(reservations)
-    const Reservations = reservations.map((res) => {
-    //     return (
-    //         <Card 
-    //             name= [res.name]
-
-
-    // /> 
-    //     )
+    const reservation = reservations.map((res) => {
+        return (
+            <Card 
+                name = {res.name}
+                date = {res.date}
+                time = {res.time}
+                number = {res.number}
+                key = {res.id}
+            /> 
+        )
+        
 
     })
  
@@ -19,8 +24,8 @@ const Reservations = ({reservations}) => {
  
  
     return (
-    <div className='reservation'>
-      
+    <div className='reservation-container'>
+      {reservation}
     </div>
   )
 }

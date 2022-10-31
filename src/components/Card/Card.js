@@ -1,14 +1,15 @@
 import React from 'react'
-import '/Card.css'
+import './Card.css'
 
-const Card = () => {
+const Card = ({name, date, time, number}) => {
+    console.log(date)
     return (
         <div className= 'card'> 
-            <p> name</p>
-            <p>DATE </p>
-            <p> time </p>
-            <p>number</p>
-        
+            <p> {name}</p>
+            <p>{date}</p>
+            <p> {time} </p>
+            <p>{number}</p>
+            <button> Cancel </button>
         </div>
     )
 
