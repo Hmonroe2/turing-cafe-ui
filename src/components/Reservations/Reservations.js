@@ -4,7 +4,6 @@ import Card from '../Card/Card'
 import './Reservations.css'
 
 const Reservations = ({reservations}) => {
-    console.log(reservations)
     const reservation = reservations.map((res) => {
         return (
             <Card 
